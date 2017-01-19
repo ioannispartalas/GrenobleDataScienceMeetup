@@ -6,6 +6,7 @@ The session concerns the developement of models for the task of Named Entity Rec
 
 To train and evaluate the model just give the following command:
 
-'''
+`
 ./train_and_test_vw.sh path_to_train_data path_to_test_data
-'''
+`
+
