@@ -31,11 +31,13 @@ For all other tokens we use the label *O* (out).
 Here is an example using the above format:
 
 Paris	B-sportsteam
+
 Saint	I-sportsteam
--	I-sportsteam
+
+\-	I-sportsteam
 Germain	I-sportsteam
 will	O
-play 	O
+play	O
 against	O
 Nice	B-sportsteam
 in	O
