@@ -18,6 +18,30 @@ For a sanity check give the following:
 
 If everything goes well and our model fits nicely the data you should get an F-score of 100%.
 
+## The task
+
+## Data
+
+Our data will consist of tweets which will be formatted according to CoNLL format where each line
+contains a line with the token and its label separated by white space. For the encoding
+of the labels we will follow the BIO encoding where for the first token of an entity *X*
+the label *B-X* is attributed while for the tokens inside the entity the label *I-X*.
+For all other tokens we use the label *O* (out).
+
+Here is an example using the above format:
+
+Paris	B-sportsteam
+Saint	I-sportsteam
+-	I-sportsteam
+Germain	I-sportsteam
+will	O
+play 	O
+against	O
+Nice	B-sportsteam
+in	O
+PdP	B-facility
+
+
 ## Requierements
 
 You should have Vowpall Wabbit installed in the path as vw.
