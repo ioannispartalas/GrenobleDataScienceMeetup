@@ -2,7 +2,7 @@
 
 A hands-one session for the Grenoble Data Science Meetup presented with Georgios Balikas.
 
-The session concerns the developement of models for the task of Named Entity Recognition in tweets.
+The session concerns the development of models for the task of Named Entity Recognition (NER) in tweets.
 
 To train and evaluate the model just give the following command:
 
@@ -20,6 +20,13 @@ If everything goes well and our model fits nicely the data you should get an F-s
 
 ## The task
 
+In NER the goal is to identify the named entities that appear in textual segment and 
+classify in a predefined set of categories. Foe example, such an entity could be
+a person, an organization, a music-artist or an event. The following figure presents
+an example of a tweet which contains two named entities.
+
+![alt text](https://github.com/ioannispartalas/GrenobleDataScienceMeetup/images/ner_fig.png)
+
 ## Data
 
 Our data will consist of tweets which will be formatted according to CoNLL format where each line
@@ -30,32 +37,38 @@ For all other tokens we use the label *O* (out).
 
 Here is an example using the above format:
 
-Paris	B-sportsteam
+| Token | Label |
+|---|---:|
+| Paris | B-sportsteam |
+| Saint | I-sportsteam |
+| \- | I-sportsteam |
+| Germain | I-sportsteam |
+| will | O |
+| play | O |
+| against | O |
+| Nice | B-sportsteam |
+| in | O |
+| PdP | B-facility |
 
-Saint	I-sportsteam
 
-\-	I-sportsteam
-Germain	I-sportsteam
-will	O
-play	O
-against	O
-Nice	B-sportsteam
-in	O
-PdP	B-facility
-
-
-## Requierements
-
-You should have Vowpall Wabbit installed in the path as vw.
+## Requirements
+* Basic python installation 
+* You should have Vowpall Wabbit installed in the path as vw. Please check installation instructions in the [VW tutorial page](https://github.com/JohnLangford/vowpal_wabbit/wiki/Tutorial).
 
 ## Docker
 
 A docker file is also provided for building a functional environment.
 
+You should have Docker installed in your system. For building the image give the following command inside the folder of the project.
+
 ```
 sudo docker build -f DockerFile -t meetup .
 ```
 
+This step may take some time, so keep cool. 
+
+After the image is built you can start an interactive shell with the following command:
+
 ```
-sudo docker run  --name contname -t -i  meetup
+sudo docker run  --name meetup_container -t -i  meetup
 ```
