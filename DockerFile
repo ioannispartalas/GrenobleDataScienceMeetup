@@ -1,0 +1,21 @@
+FROM ubuntu:16.04
+
+RUN apt-get -y update && apt-get -y upgrade python python-pip python-dev libblas-dev liblapack-dev gfortran openjdk-8-jre wget vim unzip zip curl libboost-program-options-dev libboost-python-dev git autotools-dev automake libtool zlib1g-dev libboost-system-dev htop
+
+RUN pip install -U numpy scipy nltk pandas scikit-learn requests paste
+
+RUN mkdir tagger && mkdir tagger/models 
+
+RUN python -m nltk.downloader stopwords &&  python -m nltk.downloader words && python -m nltk.downloader wordnet  
+
+RUN git clone git://github.com/JohnLangford/vowpal_wabbit.git && git clone git://github.com/miloyip/rapidjson
+RUN cd /rapidjson && cp -r include/rapidjson /usr/include/
+RUN cd /vowpal_wabbit && ./autogen.sh && ./configure --with-boost-libdir=/usr/lib/x86_64-linux-gnu  && make && make install
+ENV LD_LIBRARY_PATH $LD_LIBRAY_PATH:/usr/local/lib
+
+COPY data/ /tagger/data
+
+ADD *.py /tagger/
+COPY *.sh /tagger/
+COPY *.pl /tagger/
+CMD ["bash"]

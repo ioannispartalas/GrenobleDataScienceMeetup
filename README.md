@@ -47,3 +47,15 @@ PdP	B-facility
 ## Requierements
 
 You should have Vowpall Wabbit installed in the path as vw.
+
+## Docker
+
+A docker file is also provided for building a functional environment.
+
+```
+sudo docker build -f DockerFile -t meetup .
+```
+
+```
+sudo docker run  --name contname -t -i  meetup
+```
