@@ -11,4 +11,7 @@ for line in sys.stdin:
     if not line:
         sys.stdout.write("\n")
     else:
-        sys.stdout.write(inv_mapping[int(line)]+"\n")
+        try:
+            sys.stdout.write(inv_mapping[int(line)]+"\n")
+        except IOError:
+            print(line)
