@@ -14,7 +14,7 @@ python NerVectorizer.py $train_data ./tmp_train.txt
 python NerVectorizer.py $test_data ./tmp_test.txt 
 
 echo "Training"
-options="-b 29 --quiet  --search 21 --affix -3w,3w --search_task sequence --search_neighbor_features -1:w,1:w,-1:pos,-1:N,1:N,-2:w,2:w --search_history_length 2 --passes 10 --learning_rate 0.07492 -c -k --holdout_off"
+options="-b 29 --quiet  --search 21 --search_task sequence --search_neighbor_features --passes 1 --learning_rate 0.5 -c -k --holdout_off"
 model_name="vw_model.model"
 
 train_command="vw ${options}  tmp_train.txt -f ${MODEL_PATH}${model_name}"

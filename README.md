@@ -29,7 +29,7 @@ an example of a tweet which contains two named entities.
 
 ## Data
 
-Our data will consist of tweets which will be formatted according to CoNLL format where each line
+Our data consists of tweets which are structured according to CoNLL format where each line
 contains a line with the token and its label separated by white space. For the encoding
 of the labels we will follow the BIO encoding where for the first token of an entity *X*
 the label *B-X* is attributed while for the tokens inside the entity the label *I-X*.
