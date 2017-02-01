@@ -72,3 +72,6 @@ After the image is built you can start an interactive shell with the following c
 ```
 sudo docker run  --name meetup_container -t -i  meetup
 ```
+
+## References
+[1] Partalas, Ioannis, Lopez, Cédric, Derbas, Nadia  and  Kalitvianski, Ruslan, Learning to Search for Recognizing Named Entities in Twitter, Proceedings of the 2nd Workshop on Noisy User-generated Text (WNUT), COLING 2016
