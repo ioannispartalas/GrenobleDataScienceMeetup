@@ -21,7 +21,7 @@ If everything goes well and our model fits nicely the data you should get an F-s
 ## The task
 
 In NER the goal is to identify the named entities that appear in textual segment and 
-classify in a predefined set of categories. Foe example, such an entity could be
+classify in a predefined set of categories. For example, such an entity could be
 a person, an organization, a music-artist or an event. The following figure presents
 an example of a tweet which contains two named entities.
 
@@ -50,6 +50,8 @@ Here is an example using the above format:
 | in | O |
 | PdP | B-facility |
 
+In the data folder you will find mock-up tweets for sanity checks. If you want to try with real data you can
+grab them from the [2nd edition of the Named Entity Recognition in Twitter competition](http://noisy-text.github.io/2016/ner-shared-task.html).
 
 ## Requirements
 * Basic python installation 
